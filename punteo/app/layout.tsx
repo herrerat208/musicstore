@@ -4,6 +4,7 @@ import { Bebas_Neue, DM_Sans, Space_Mono } from 'next/font/google'
 import './globals.css'
 import { CartProvider } from '@/components/cart-context'
 import { ThemeProvider } from './context/theme-context'
+import Chatbot from '@/components/chatbot'
 
 const bebasNeue = Bebas_Neue({
   weight: '400',
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </CartProvider>
         </ThemeProvider>
+        <Chatbot />
       </body>
     </html>
   )

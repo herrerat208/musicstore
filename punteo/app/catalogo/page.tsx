@@ -197,53 +197,45 @@ export default function Catalogo() {
 
   return (
     <>
-      <Navbar />
-      
-      {/* Header de búsqueda sticky */}
-      <div className="sticky top-[72px] z-40 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-zinc-800">
+      <Navbar onCartClick={() => setIsCartOpen(true)} />
+
+      {/* Header sticky */}
+      <div className="sticky top-[72px] z-40 backdrop-blur-sm" style={{ backgroundColor: 'color-mix(in srgb, var(--bg) 95%, transparent)', borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 animate-[spin_6s_linear_infinite] flex-shrink-0 hidden sm:block">
               <Image src="/logo.png" alt="Punteo" width={40} height={40} className="rounded-full" />
             </div>
-            
             <div className="hidden md:flex flex-col">
-              <span className="font-black text-white tracking-tight">PUNTEO</span>
+              <span className="font-black tracking-tight" style={{ color: 'var(--text)' }}>PUNTEO</span>
               <span className="text-[#D4854A] text-xs uppercase tracking-wide">Catálogo</span>
             </div>
-            
             <div className="flex-1 max-w-xl">
               <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Buscar instrumentos, marcas, modelos..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-2.5 pl-10 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#D4854A] focus:ring-1 focus:ring-[#D4854A] transition-colors"
-                />
-                <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <input type="text" placeholder="Buscar instrumentos, marcas, modelos..."
+                  value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-1 focus:ring-[#D4854A] transition-colors"
+                  style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)', color: 'var(--text)' }} />
+                <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'var(--text-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
-            
-            <span className="text-zinc-500 text-sm hidden md:block">
-              {filteredProducts.length} productos
-            </span>
+            <span className="text-sm hidden md:block" style={{ color: 'var(--text-2)' }}>{filteredProducts.length} productos</span>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[2100px] mx-auto px-6 py-8">
+      <div className="max-w-[2100px] mx-auto px-6 py-8" style={{ backgroundColor: 'var(--bg)' }}>
         <div className="flex gap-6">
-        
-          {/* Sidebar de filtros */}
+
+          {/* Sidebar */}
           <aside className="w-64 flex-shrink-0 hidden lg:block">
             <div className="sticky top-32 space-y-6">
-              
-              {/* Filtro por categorías */}
-              <div className="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
-                <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+
+              {/* Categorías */}
+              <div className="rounded-xl p-4" style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)' }}>
+                <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--text)' }}>
                   <svg className="w-4 h-4 text-[#D4854A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
@@ -252,21 +244,19 @@ export default function Catalogo() {
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
                   {categories.map(cat => (
                     <label key={cat} className="flex items-center gap-2 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        checked={selectedCategories.includes(cat)}
+                      <input type="checkbox" checked={selectedCategories.includes(cat)}
                         onChange={() => toggleFilter(selectedCategories, setSelectedCategories, cat)}
-                        className="w-4 h-4 rounded border-zinc-600 bg-zinc-800 text-[#D4854A] focus:ring-[#D4854A] focus:ring-offset-0"
-                      />
-                      <span className="text-zinc-400 group-hover:text-white transition-colors text-sm">{cat}</span>
+                        className="w-4 h-4 rounded text-[#D4854A] focus:ring-[#D4854A] focus:ring-offset-0"
+                        style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg-3)' }} />
+                      <span className="text-sm group-hover:text-[#D4854A] transition-colors" style={{ color: 'var(--text-2)' }}>{cat}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
-              {/* Filtro por marcas */}
-              <div className="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
-                <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+              {/* Marcas */}
+              <div className="rounded-xl p-4" style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)' }}>
+                <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--text)' }}>
                   <svg className="w-4 h-4 text-[#D4854A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                   </svg>
@@ -275,21 +265,19 @@ export default function Catalogo() {
                 <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                   {brands.map(brand => (
                     <label key={brand} className="flex items-center gap-2 cursor-pointer group">
-                      <input
-                        type="checkbox"
-                        checked={selectedBrands.includes(brand)}
+                      <input type="checkbox" checked={selectedBrands.includes(brand)}
                         onChange={() => toggleFilter(selectedBrands, setSelectedBrands, brand)}
-                        className="w-4 h-4 rounded border-zinc-600 bg-zinc-800 text-[#D4854A] focus:ring-[#D4854A] focus:ring-offset-0"
-                      />
-                      <span className="text-zinc-400 group-hover:text-white transition-colors text-sm">{brand}</span>
+                        className="w-4 h-4 rounded text-[#D4854A] focus:ring-[#D4854A] focus:ring-offset-0"
+                        style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg-3)' }} />
+                      <span className="text-sm group-hover:text-[#D4854A] transition-colors" style={{ color: 'var(--text-2)' }}>{brand}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
-              {/* Filtro por precio */}
-              <div className="bg-zinc-900/50 rounded-xl p-4 border border-zinc-800">
-                <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+              {/* Precio */}
+              <div className="rounded-xl p-4" style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)' }}>
+                <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--text)' }}>
                   <svg className="w-4 h-4 text-[#D4854A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -297,57 +285,39 @@ export default function Catalogo() {
                 </h3>
                 <div className="space-y-3">
                   <div className="flex gap-2">
-                    <input
-                      type="number"
-                      placeholder="Desde"
-                      value={priceRange[0] || ''}
+                    <input type="number" placeholder="Desde" value={priceRange[0] || ''}
                       onChange={(e) => setPriceRange([Number(e.target.value) || 0, priceRange[1]])}
-                      className="w-full bg-zinc-800 border border-zinc-700 rounded px-2 py-1.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#D4854A]"
-                    />
-                    <input
-                      type="number"
-                      placeholder="Hasta"
-                      value={priceRange[1] === 10000000 ? '' : priceRange[1]}
+                      className="w-full rounded px-2 py-1.5 text-xs focus:outline-none focus:border-[#D4854A]"
+                      style={{ backgroundColor: 'var(--bg-3)', border: '1px solid var(--border)', color: 'var(--text)' }} />
+                    <input type="number" placeholder="Hasta" value={priceRange[1] === 10000000 ? '' : priceRange[1]}
                       onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value) || 10000000])}
-                      className="w-full bg-zinc-800 border border-zinc-700 rounded px-2 py-1.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#D4854A]"
-                    />
+                      className="w-full rounded px-2 py-1.5 text-xs focus:outline-none focus:border-[#D4854A]"
+                      style={{ backgroundColor: 'var(--bg-3)', border: '1px solid var(--border)', color: 'var(--text)' }} />
                   </div>
-                  <input
-                    type="range"
-                    min="0"
-                    max="10000000"
-                    step="100000"
-                    value={priceRange[1]}
+                  <input type="range" min="0" max="10000000" step="100000" value={priceRange[1]}
                     onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
-                    className="w-full accent-[#D4854A]"
-                  />
-                  <div className="flex justify-between text-xs text-zinc-500">
-                    <span>$0</span>
-                    <span>$10M+</span>
+                    className="w-full accent-[#D4854A]" />
+                  <div className="flex justify-between text-xs" style={{ color: 'var(--text-2)' }}>
+                    <span>$0</span><span>$10M+</span>
                   </div>
                 </div>
               </div>
 
               {(selectedCategories.length > 0 || selectedBrands.length > 0 || priceRange[0] > 0 || priceRange[1] < 10000000) && (
-                <button
-                  onClick={() => {
-                    setSelectedCategories([]);
-                    setSelectedBrands([]);
-                    setPriceRange([0, 10000000]);
-                  }}
-                  className="w-full text-[#C0392B] hover:text-[#D4854A] text-sm font-medium transition-colors"
-                >
+                <button onClick={() => { setSelectedCategories([]); setSelectedBrands([]); setPriceRange([0, 10000000]); }}
+                  className="w-full text-red-400 hover:text-[#D4854A] text-sm font-medium transition-colors">
                   Limpiar filtros
                 </button>
               )}
             </div>
           </aside>
 
-          {/* Grid de productos */}
+          {/* Grid */}
           <section className="flex-1">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-black text-white tracking-tight">Catálogo</h2>
-              <select className="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#D4854A]">
+              <h2 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text)' }}>Catálogo</h2>
+              <select className="rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#D4854A]"
+                style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)', color: 'var(--text)' }}>
                 <option>Relevancia</option>
                 <option>Precio: menor a mayor</option>
                 <option>Precio: mayor a menor</option>
@@ -356,63 +326,39 @@ export default function Catalogo() {
             </div>
 
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">                
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
                 {filteredProducts.map(product => (
-                  <article
-                    key={product.id}
-                    className="group bg-zinc-900/50 rounded-xl border border-zinc-800 hover:border-[#D4854A]/50 transition-all duration-200 overflow-hidden"
-                  >
-                  {/* Imagen del producto */}
-<div className="aspect-square bg-gradient-to-br from-zinc-800 to-zinc-900 relative overflow-hidden">
-  <Image
-    src={product.image}
-    alt={product.name}
-    fill
-    className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-    onError={(e) => {
-      // Fallback simple: ocultar la imagen si no carga
-      const target = e.target as HTMLImageElement;
-      target.style.display = 'none';
-    }}
-  />
-  
-  {/* Badge de categoría */}
-  <span className="absolute top-3 left-3 px-2 py-1 bg-[#0a0a0a]/80 border border-zinc-700 rounded text-xs text-zinc-400 z-10">
-    {product.category}
-  </span>
-  
-  {/* Hover overlay */}
-  <div className="absolute inset-0 bg-[#0a0a0a]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
-    <button className="bg-[#D4854A] hover:bg-[#c0742f] text-black font-bold px-4 py-2 text-sm uppercase tracking-wide transition-colors">
-      Ver detalle
-    </button>
-  </div>
-</div>
-                    {/* Info del producto */}
+                  <article key={product.id}
+                    className="group rounded-xl overflow-hidden transition-all duration-200 hover:border-[#D4854A]/50"
+                    style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)' }}>
+                    <div className="aspect-square relative overflow-hidden" style={{ backgroundColor: 'var(--bg-3)' }}>
+                      <Image src={product.image} alt={product.name} fill
+                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                      <span className="absolute top-3 left-3 px-2 py-1 rounded text-xs z-10"
+                        style={{ backgroundColor: 'color-mix(in srgb, var(--bg) 80%, transparent)', border: '1px solid var(--border)', color: 'var(--text-2)' }}>
+                        {product.category}
+                      </span>
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
+                        <button className="bg-[#D4854A] hover:bg-[#c0742f] text-black font-bold px-4 py-2 text-sm uppercase tracking-wide transition-colors">
+                          Ver detalle
+                        </button>
+                      </div>
+                    </div>
                     <div className="p-4 space-y-3">
                       <div>
                         <p className="text-xs text-[#D4854A] uppercase tracking-wide font-medium">{product.brand}</p>
-                        <h3 className="font-semibold text-white leading-tight group-hover:text-[#D4854A] transition-colors line-clamp-2">
+                        <h3 className="font-semibold leading-tight group-hover:text-[#D4854A] transition-colors line-clamp-2" style={{ color: 'var(--text)' }}>
                           {product.name}
                         </h3>
                       </div>
-                      
                       <div className="flex items-end justify-between">
                         <div>
-                          <p className="text-lg font-bold text-white">{formatPrice(product.price)}</p>
-                          <p className="text-xs text-zinc-500">o 12 cuotas de {formatPrice(Math.round(product.price / 12))}</p>
+                          <p className="text-lg font-bold" style={{ color: 'var(--text)' }}>{formatPrice(product.price)}</p>
+                          <p className="text-xs" style={{ color: 'var(--text-2)' }}>o 12 cuotas de {formatPrice(Math.round(product.price / 12))}</p>
                         </div>
-                        
-                        <button
-                          onClick={() => addItem({
-                            id: product.id,
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                            brand: product.brand
-                          })}
-                          className="bg-[#D4854A]/10 hover:bg-[#D4854A] text-[#D4854A] hover:text-black border border-[#D4854A] font-medium px-3 py-2 text-sm rounded-lg transition-all duration-200 flex items-center gap-1.5"
-                        >
+                        <button onClick={() => addItem({ id: String(product.id), name: product.name, price: product.price, image: product.image, brand: product.brand })}
+                          className="bg-[#D4854A]/10 hover:bg-[#D4854A] text-[#D4854A] hover:text-black border border-[#D4854A] font-medium px-3 py-2 text-sm rounded-lg transition-all duration-200 flex items-center gap-1.5">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                           </svg>
@@ -425,22 +371,15 @@ export default function Catalogo() {
               </div>
             ) : (
               <div className="text-center py-16">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-zinc-800 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--bg-2)' }}>
+                  <svg className="w-8 h-8" style={{ color: 'var(--text-2)' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-1">Sin resultados</h3>
-                <p className="text-zinc-500 text-sm">Probá ajustando los filtros o tu búsqueda</p>
-                <button
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedCategories([]);
-                    setSelectedBrands([]);
-                    setPriceRange([0, 10000000]);
-                  }}
-                  className="mt-4 text-[#D4854A] hover:text-[#c0742f] text-sm font-medium transition-colors"
-                >
+                <h3 className="text-lg font-semibold mb-1" style={{ color: 'var(--text)' }}>Sin resultados</h3>
+                <p className="text-sm" style={{ color: 'var(--text-2)' }}>Probá ajustando los filtros o tu búsqueda</p>
+                <button onClick={() => { setSearchQuery(''); setSelectedCategories([]); setSelectedBrands([]); setPriceRange([0, 10000000]); }}
+                  className="mt-4 text-[#D4854A] hover:text-[#c0742f] text-sm font-medium transition-colors">
                   Limpiar todos los filtros
                 </button>
               </div>
@@ -449,23 +388,18 @@ export default function Catalogo() {
         </div>
       </div>
 
-      <footer className="border-t border-zinc-800 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-            <p>© 2026 Punteo · Morón, Buenos Aires</p>
-            <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#22c55e]"></span>
-                Tienda abierta
-              </span>
-              <a href="#" className="hover:text-[#D4854A] transition-colors">WhatsApp</a>
-              <a href="#" className="hover:text-[#D4854A] transition-colors">Instagram</a>
-            </div>
+      <footer className="py-6 px-4" style={{ borderTop: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}>
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: 'var(--text-2)' }}>
+          <p>© 2026 Punteo · Morón, Buenos Aires</p>
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>Tienda abierta</span>
+            <a href="#" className="hover:text-[#D4854A] transition-colors">WhatsApp</a>
+            <a href="#" className="hover:text-[#D4854A] transition-colors">Instagram</a>
           </div>
         </div>
       </footer>
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
-  );
+  )
 }
