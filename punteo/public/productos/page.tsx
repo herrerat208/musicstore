@@ -16,11 +16,11 @@ interface Product {
   image: string;
 }
 
-// Categorías actualizadas
+// Categor�as actualizadas
 const categories = [
-  'Guitarras', 'Bajos', 'Batería', 'Teclados', 'Vientos', 'Sonido',
+  'Guitarras', 'Bajos', 'Bater�a', 'Teclados', 'Vientos', 'Sonido',
   'Pianos', 'Violines', 'Violonchelos', 'Violas', 'Contrabajo',
-  'Percusión', 'Acordeón', 'Ukelele', 'Banjo', 'Mandolina', 'Armónica', 'Arpa'
+  'Percusi�n', 'Acorde�n', 'Ukelele', 'Banjo', 'Mandolina', 'Arm�nica', 'Arpa'
 ];
 
 // Marcas actualizadas
@@ -55,13 +55,13 @@ const products: Product[] = [
   { id: 23, name: 'Epiphone Thunderbird', category: 'Bajos', price: 780000, brand: 'Epiphone', image: '/productos/epiphone-thunderbird.jpg' },
   { id: 24, name: 'Sterling by Music Man SUB Ray4', category: 'Bajos', price: 620000, brand: 'Sterling by Music Man', image: '/productos/musicman-ray4.jpg' },
   
-  // BATERÍA
-  { id: 5, name: 'Pearl Export EXX725', category: 'Batería', price: 1200000, brand: 'Pearl', image: '/productos/pearl-export.jpg' },
-  { id: 6, name: 'Yamaha Stage Custom', category: 'Batería', price: 1450000, brand: 'Yamaha', image: '/productos/yamaha-stage.jpg' },
-  { id: 25, name: 'Tama Imperialstar', category: 'Batería', price: 1350000, brand: 'Tama', image: '/productos/tama-imperialstar.jpg' },
-  { id: 26, name: 'Pearl Roadshow', category: 'Batería', price: 850000, brand: 'Pearl', image: '/productos/pearl-roadshow.jpg' },
-  { id: 27, name: 'Yamaha GigMaker', category: 'Batería', price: 920000, brand: 'Yamaha', image: '/productos/yamaha-gigmaker.jpg' },
-  { id: 28, name: 'Mapex Tornado', category: 'Batería', price: 780000, brand: 'Mapex', image: '/productos/mapex-tornado.jpg' },
+  // BATER�A
+  { id: 5, name: 'Pearl Export EXX725', category: 'Bater�a', price: 1200000, brand: 'Pearl', image: '/productos/pearl-export.jpg' },
+  { id: 6, name: 'Yamaha Stage Custom', category: 'Bater�a', price: 1450000, brand: 'Yamaha', image: '/productos/yamaha-stage.jpg' },
+  { id: 25, name: 'Tama Imperialstar', category: 'Bater�a', price: 1350000, brand: 'Tama', image: '/productos/tama-imperialstar.jpg' },
+  { id: 26, name: 'Pearl Roadshow', category: 'Bater�a', price: 850000, brand: 'Pearl', image: '/productos/pearl-roadshow.jpg' },
+  { id: 27, name: 'Yamaha GigMaker', category: 'Bater�a', price: 920000, brand: 'Yamaha', image: '/productos/yamaha-gigmaker.jpg' },
+  { id: 28, name: 'Mapex Tornado', category: 'Bater�a', price: 780000, brand: 'Mapex', image: '/productos/mapex-tornado.jpg' },
   
   // TECLADOS
   { id: 7, name: 'Roland FP-30X Digital', category: 'Teclados', price: 980000, brand: 'Roland', image: '/productos/roland-fp30x.jpg' },
@@ -73,9 +73,9 @@ const products: Product[] = [
   { id: 33, name: 'Korg Microkey 61', category: 'Teclados', price: 420000, brand: 'Korg', image: '/productos/korg-microkey.jpg' },
   
   // VIENTOS
-  { id: 11, name: 'Yamaha YTS-280 Saxofón', category: 'Vientos', price: 1350000, brand: 'Yamaha', image: '/productos/yamaha-yts280.jpg' },
+  { id: 11, name: 'Yamaha YTS-280 Saxof�n', category: 'Vientos', price: 1350000, brand: 'Yamaha', image: '/productos/yamaha-yts280.jpg' },
   { id: 34, name: 'Yamaha YTR-2330 Trompeta', category: 'Vientos', price: 980000, brand: 'Yamaha', image: '/productos/yamaha-ytr2330.jpg' },
-  { id: 35, name: 'Bach Stradivarius Trombón', category: 'Vientos', price: 2100000, brand: 'Bach', image: '/productos/bach-trombon.jpg' },
+  { id: 35, name: 'Bach Stradivarius Tromb�n', category: 'Vientos', price: 2100000, brand: 'Bach', image: '/productos/bach-trombon.jpg' },
   { id: 36, name: 'Yamaha YCL-255 Clarinete', category: 'Vientos', price: 1150000, brand: 'Yamaha', image: '/productos/yamaha-ycl255.jpg' },
   { id: 37, name: 'Jean Paul USA Flauta', category: 'Vientos', price: 420000, brand: 'Jean Paul USA', image: '/productos/jeanpaul-flauta.jpg' },
   { id: 84, name: 'Yamaha YRS-302B Flauta Dulce', category: 'Vientos', price: 45000, brand: 'Yamaha', image: '/productos/yamaha-yrs302.jpg' },
@@ -109,11 +109,11 @@ const products: Product[] = [
   { id: 49, name: 'Nord Piano 5 Stage', category: 'Pianos', price: 5200000, brand: 'Nord', image: '/productos/nord-piano5.jpg' },
 
   // VIOLINES
-  { id: 50, name: 'Yamaha V5SA Violín 4/4', category: 'Violines', price: 850000, brand: 'Yamaha', image: '/productos/yamaha-v5sa.jpg' },
-  { id: 51, name: 'Stentor Student II Violín', category: 'Violines', price: 420000, brand: 'Stentor', image: '/productos/stentor-student.jpg' },
-  { id: 52, name: 'Cremona SV-175 Violín', category: 'Violines', price: 680000, brand: 'Cremona', image: '/productos/cremona-sv175.jpg' },
-  { id: 53, name: 'Knilling Perfection Violín', category: 'Violines', price: 1200000, brand: 'Knilling', image: '/productos/knilling-perfection.jpg' },
-  { id: 54, name: 'Yamaha V7SG Violín', category: 'Violines', price: 1850000, brand: 'Yamaha', image: '/productos/yamaha-v7sg.jpg' },
+  { id: 50, name: 'Yamaha V5SA Viol�n 4/4', category: 'Violines', price: 850000, brand: 'Yamaha', image: '/productos/yamaha-v5sa.jpg' },
+  { id: 51, name: 'Stentor Student II Viol�n', category: 'Violines', price: 420000, brand: 'Stentor', image: '/productos/stentor-student.jpg' },
+  { id: 52, name: 'Cremona SV-175 Viol�n', category: 'Violines', price: 680000, brand: 'Cremona', image: '/productos/cremona-sv175.jpg' },
+  { id: 53, name: 'Knilling Perfection Viol�n', category: 'Violines', price: 1200000, brand: 'Knilling', image: '/productos/knilling-perfection.jpg' },
+  { id: 54, name: 'Yamaha V7SG Viol�n', category: 'Violines', price: 1850000, brand: 'Yamaha', image: '/productos/yamaha-v7sg.jpg' },
 
   // VIOLONCHELOS
   { id: 55, name: 'Yamaha VC5S Violonchelo 4/4', category: 'Violonchelos', price: 1650000, brand: 'Yamaha', image: '/productos/yamaha-vc5s.jpg' },
@@ -128,18 +128,18 @@ const products: Product[] = [
   { id: 60, name: 'Stentor Bass 3/4', category: 'Contrabajo', price: 2800000, brand: 'Stentor', image: '/productos/stentor-bass.jpg' },
   { id: 61, name: 'Yamaha SLB200 Silent Bass', category: 'Contrabajo', price: 4500000, brand: 'Yamaha', image: '/productos/yamaha-slb200.jpg' },
 
-  // PERCUSIÓN
-  { id: 62, name: 'LP Aspire Congas', category: 'Percusión', price: 680000, brand: 'LP', image: '/productos/lp-congas.jpg' },
-  { id: 63, name: 'Meinl Bongos', category: 'Percusión', price: 320000, brand: 'Meinl', image: '/productos/meinl-bongos.jpg' },
-  { id: 64, name: 'Cajón Peruano Professional', category: 'Percusión', price: 280000, brand: 'Pearl', image: '/productos/cajon-peruano.jpg' },
-  { id: 65, name: 'Pearl PFB-200 Bongos', category: 'Percusión', price: 380000, brand: 'Pearl', image: '/productos/pearl-bongos.jpg' },
-  { id: 66, name: 'LP Galaxia Timbales', category: 'Percusión', price: 850000, brand: 'LP', image: '/productos/lp-timbales.jpg' },
-  { id: 67, name: 'Meinl Djembe 12"', category: 'Percusión', price: 420000, brand: 'Meinl', image: '/productos/meinl-djembe.jpg' },
+  // PERCUSI�N
+  { id: 62, name: 'LP Aspire Congas', category: 'Percusi�n', price: 680000, brand: 'LP', image: '/productos/lp-congas.jpg' },
+  { id: 63, name: 'Meinl Bongos', category: 'Percusi�n', price: 320000, brand: 'Meinl', image: '/productos/meinl-bongos.jpg' },
+  { id: 64, name: 'Caj�n Peruano Professional', category: 'Percusi�n', price: 280000, brand: 'Pearl', image: '/productos/cajon-peruano.jpg' },
+  { id: 65, name: 'Pearl PFB-200 Bongos', category: 'Percusi�n', price: 380000, brand: 'Pearl', image: '/productos/pearl-bongos.jpg' },
+  { id: 66, name: 'LP Galaxia Timbales', category: 'Percusi�n', price: 850000, brand: 'LP', image: '/productos/lp-timbales.jpg' },
+  { id: 67, name: 'Meinl Djembe 12"', category: 'Percusi�n', price: 420000, brand: 'Meinl', image: '/productos/meinl-djembe.jpg' },
 
-  // ACORDEÓN
-  { id: 68, name: 'Hohner Bravo III 72', category: 'Acordeón', price: 1850000, brand: 'Hohner', image: '/productos/hohner-bravo.jpg' },
-  { id: 69, name: 'Pigini M1 Piano', category: 'Acordeón', price: 3200000, brand: 'Pigini', image: '/productos/pigini-m1.jpg' },
-  { id: 70, name: 'Victoria 402 PM', category: 'Acordeón', price: 2800000, brand: 'Victoria', image: '/productos/victoria-402.jpg' },
+  // ACORDE�N
+  { id: 68, name: 'Hohner Bravo III 72', category: 'Acorde�n', price: 1850000, brand: 'Hohner', image: '/productos/hohner-bravo.jpg' },
+  { id: 69, name: 'Pigini M1 Piano', category: 'Acorde�n', price: 3200000, brand: 'Pigini', image: '/productos/pigini-m1.jpg' },
+  { id: 70, name: 'Victoria 402 PM', category: 'Acorde�n', price: 2800000, brand: 'Victoria', image: '/productos/victoria-402.jpg' },
 
   // UKELELE
   { id: 71, name: 'Kala KA-S Soprano', category: 'Ukelele', price: 180000, brand: 'Kala', image: '/productos/kala-soprano.jpg' },
@@ -155,10 +155,10 @@ const products: Product[] = [
   { id: 77, name: 'Ibanez M510 Mandolina', category: 'Mandolina', price: 420000, brand: 'Ibanez', image: '/productos/ibanez-m510.jpg' },
   { id: 78, name: 'Kentucky KM-150 Mandolina', category: 'Mandolina', price: 780000, brand: 'Kentucky', image: '/productos/kentucky-km150.jpg' },
 
-  // ARMÓNICA
-  { id: 79, name: 'Hohner Marine Band', category: 'Armónica', price: 85000, brand: 'Hohner', image: '/productos/hohner-marine.jpg' },
-  { id: 80, name: 'Suzuki Promaster', category: 'Armónica', price: 120000, brand: 'Suzuki', image: '/productos/suzuki-promaster.jpg' },
-  { id: 81, name: 'Hohner Special 20', category: 'Armónica', price: 95000, brand: 'Hohner', image: '/productos/hohner-special20.jpg' },
+  // ARM�NICA
+  { id: 79, name: 'Hohner Marine Band', category: 'Arm�nica', price: 85000, brand: 'Hohner', image: '/productos/hohner-marine.jpg' },
+  { id: 80, name: 'Suzuki Promaster', category: 'Arm�nica', price: 120000, brand: 'Suzuki', image: '/productos/suzuki-promaster.jpg' },
+  { id: 81, name: 'Hohner Special 20', category: 'Arm�nica', price: 95000, brand: 'Hohner', image: '/productos/hohner-special20.jpg' },
 
   // ARPA
   { id: 82, name: 'Rees Harps Sharpsicle', category: 'Arpa', price: 1200000, brand: 'Rees Harps', image: '/productos/rees-sharpsicle.jpg' },
@@ -208,7 +208,7 @@ export default function Catalogo() {
             </div>
             <div className="hidden md:flex flex-col">
               <span className="font-black tracking-tight" style={{ color: 'var(--text)' }}>PUNTEO</span>
-              <span className="text-[#D4854A] text-xs uppercase tracking-wide">Catálogo</span>
+              <span className="text-[#D4854A] text-xs uppercase tracking-wide">Cat�logo</span>
             </div>
             <div className="flex-1 max-w-xl">
               <div className="relative">
@@ -233,13 +233,13 @@ export default function Catalogo() {
           <aside className="w-64 flex-shrink-0 hidden lg:block">
             <div className="sticky top-32 space-y-6">
 
-              {/* Categorías */}
+              {/* Categor�as */}
               <div className="rounded-xl p-4" style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)' }}>
                 <h3 className="font-bold mb-3 flex items-center gap-2" style={{ color: 'var(--text)' }}>
                   <svg className="w-4 h-4 text-[#D4854A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
-                  Categorías
+                  Categor�as
                 </h3>
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-1">
                   {categories.map(cat => (
@@ -315,7 +315,7 @@ export default function Catalogo() {
           {/* Grid */}
           <section className="flex-1">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text)' }}>Catálogo</h2>
+              <h2 className="text-2xl font-black tracking-tight" style={{ color: 'var(--text)' }}>Cat�logo</h2>
               <select className="rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#D4854A]"
                 style={{ backgroundColor: 'var(--bg-2)', border: '1px solid var(--border)', color: 'var(--text)' }}>
                 <option>Relevancia</option>
@@ -377,7 +377,7 @@ export default function Catalogo() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold mb-1" style={{ color: 'var(--text)' }}>Sin resultados</h3>
-                <p className="text-sm" style={{ color: 'var(--text-2)' }}>Probá ajustando los filtros o tu búsqueda</p>
+                <p className="text-sm" style={{ color: 'var(--text-2)' }}>Prob� ajustando los filtros o tu b�squeda</p>
                 <button onClick={() => { setSearchQuery(''); setSelectedCategories([]); setSelectedBrands([]); setPriceRange([0, 10000000]); }}
                   className="mt-4 text-[#D4854A] hover:text-[#c0742f] text-sm font-medium transition-colors">
                   Limpiar todos los filtros
@@ -390,7 +390,7 @@ export default function Catalogo() {
 
       <footer className="py-6 px-4" style={{ borderTop: '1px solid var(--border)', backgroundColor: 'var(--bg)' }}>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style={{ color: 'var(--text-2)' }}>
-          <p>© 2026 Punteo · Morón, Buenos Aires</p>
+          <p>� 2026 Punteo � Mor�n, Buenos Aires</p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>Tienda abierta</span>
             <a href="#" className="hover:text-[#D4854A] transition-colors">WhatsApp</a>
